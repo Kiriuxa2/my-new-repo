@@ -11,30 +11,26 @@
 ✔ Любое действие выводит сумму денег
 """
 
+
 class Bankomat():
     def __init__(self):
-
         self.bank = 0
 
-    def cnat(self,money):
+    def cnat(self, money):
         self.bank -= money
 
-    def vnesti(self,money):
-        self.bank += money
+    def vnesti(self, money):
+        if self.check(money):
+            self.bank += money
 
-    def chek(self,money):
-        if money % 50 == 0:
-            return True
-        else:
-            return False
+    def check(self, money):
+        return not money % 50
 
 
-user_in = input('Команда:(1 - пополнить,2 - снять, 3 - выйти,')    
+user_in = input('Команда:(1 - пополнить,2 - снять, 3 - выйти,')
 bank = Bankomat()
 while user_in != 3:
     if user_in == 1:
         bank.vnesti()
     elif user_in == 2:
         bank.cnat()
-
-        
