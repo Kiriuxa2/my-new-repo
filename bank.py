@@ -17,7 +17,9 @@ class Bankomat():
         self.bank = 0
 
     def cnat(self, money):
-        self.bank -= money
+        if self.check(money):
+            self.bank -= money
+        
 
     def vnesti(self, money):
         if self.check(money):
