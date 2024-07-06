@@ -17,40 +17,34 @@ class Bankomat():
         self.bank = 0
 
     def cnat(self, money):
-        if self.check(money):
-            self.bank -= money
-        # переделать элиф
-        
+        self.bank -= money
+
     def vnesti(self, money):
-        if self.check(money):
-            self.bank += money
+        self.bank += money
 
     def check(self, money):
         # добавить в метод остальные проверки: налоги, кратность и перебор
+        result = True
         if not money % 50:
-            return False
+            self.cnat(money)
         if money > bank:
-            return False
+            ...
         '''
-        if bank >= 5000000:
-            money / 10%
+        if bank >= 5_000_000:
+            self.bank -= self.bank * 0.1
         '''
-    
-    
+        return result
 
 
 user_in = int(input('Команда: 1 - пополнить,2 - снять, 3 - выйти '))
 bank = Bankomat()
-print('Баланс: ', bank)
 while user_in != 3:
     # переделать!!!
     if user_in == 1:
         money = int(input('Сумма пополнения:'))
         bank.vnesti(money)
-        print(bank)
-        user_in = int(input('Команда:(1 - пополнить,2 - снять, 3 - выйти,'))
     elif user_in == 2:
         money = int(input('Сумма снятия'))
         bank.cnat(money)
-        print(bank)
-        user_in = int(input('Команда:(1 - пополнить,2 - снять, 3 - выйти,'))
+    print('Баланс: ', bank)
+    user_in = int(input('Команда:(1 - пополнить,2 - снять, 3 - выйти,'))
