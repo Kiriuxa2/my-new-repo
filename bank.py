@@ -50,6 +50,7 @@ class Bankomat():
 
 user_in = int(input('Команда: 1 - пополнить,2 - снять, 3 - выйти '))
 balance = Bankomat()
+quantity = Bankomat()
 #quantity = Bankomat()
 while user_in != 3:
     # переделать!!!
